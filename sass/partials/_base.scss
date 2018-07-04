@@ -1,0 +1,15 @@
+@import './../modules/colors';
+@import './../modules/grid';
+
+/*.main{
+  background-image: ;
+}
+
+.drumsPage{
+  background-image: ;
+}*/
+
+.key {
+  display: inline-block;
+  @include grid(9, 2%)
+}
