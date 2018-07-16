@@ -1,0 +1,33 @@
+@import '../../modules/colors';
+@import '../../modules/grid';
+
+.drumsPage{
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.keys {
+  padding: 15rem;
+
+    .key {
+      display: inline-block;
+      @include grid(9);
+      font-size: 2rem;
+      border: 2px solid $drumsColor;
+      border-radius: 3px;
+      transition: all 0.05s ease;
+    }
+
+    span{
+      color: $drumsColor;
+    }
+
+  .playing {
+    transform: scale(1);
+    border-color: $drumsBorder;
+    box-shadow: 0 0 1px $drumsBorder;
+  }
+}

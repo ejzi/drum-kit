@@ -1,5 +1,5 @@
-@import './../modules/colors';
-@import './../modules/grid';
+@import '../../modules/colors';
+@import '../../modules/grid';
 
 .main{
   width: 100vw;
@@ -20,17 +20,4 @@
     color: #e0e0e0;
     padding: 30vh 10vw;
   }
-}
-
-.drumsPage{
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../images/background.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.key {
-  display: inline-block;
-  @include grid(9, 2%)
 }

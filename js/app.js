@@ -1,22 +1,32 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener('keydown', function(e){
-    console.log(e.keyCode);
+function playSound(e) {
+    //console.log(e.keyCode);
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"`);
-    console.log(audio);
+    //console.log(audio);
 
     const key = document.querySelector(`.key[data-key="${e.keyCode}"`);
-    console.log(key);
+    //console.log(key);
 
-    if(!audio) return;
+    if (!audio) return;
 
     audio.currentTime = 0;
 
     audio.play();
 
     key.classList.add('playing');
-    key.classList.remove('playing');
-    key.classList.toggle('playing');
-})
+}
+    function removeTransition(e){
+       // console.log(e);
 
+        if(e.propertyName !== 'transform') return;
+
+        this.classList.remove('playing');
+
+        //console.log(e.propertyName);
+    }
+    const keys = document.querySelectorAll('.key');
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+    window.addEventListener('keydown', playSound);
 });
